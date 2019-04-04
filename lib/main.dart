@@ -29,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    BackendCall.attachListener();
   }
 
   @override
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget displayWidget(context) {
     return StreamBuilder(
-      stream: BackendCall().outSnaps,
+      stream: BackendCall.outSnaps,
       builder: (context, snapshot) {
         return anotherwidget(context, snapshot);
       },
